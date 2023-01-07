@@ -1,11 +1,63 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "../../styles/Home.module.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import styles from "../../styles/Home.module.css";
+import { Web3Button } from "@web3modal/react";
+import {
+  useAccount,
+  useBalance,
+  useDisconnect,
+  usePrepareContractWrite,
+  useContractRead,
+  useContractWrite,
+} from "wagmi";
+import { useWeb3ModalTheme } from "@web3modal/react";
+// import w3mv2contractABI from "../abi/w3mv2contractABI.json";
+import w3mv2ProxyContractABI from "../abi/w3mv2ProxyContractABI.json";
+import { BigNumber } from "ethers";
+import { formatUnits } from "ethers/lib/utils.js";
 
 export default function Home() {
+  const { address, isConnected, isDisconnected } = useAccount();
+  const { disconnect } = useDisconnect();
+  const { setTheme } = useWeb3ModalTheme();
+
+  setTheme({ themeColor: "blackWhite" });
+
+  const { data: readW3MV2Contract } = useContractRead({
+    address: "0xf67443119e26c695b446883b0b931f85dcaa46d8",
+    abi: w3mv2ProxyContractABI,
+    functionName: "name",
+  });
+
+  const { config } = usePrepareContractWrite({
+    address: "0xf67443119e26c695b446883b0b931f85dcaa46d8",
+    abi: w3mv2ProxyContractABI,
+    functionName: "purchase",
+    args: [1],
+  });
+  // console.log("config, ", config);
+  const { data: mintNFT, write } = useContractWrite(config);
+
+  // const { data: readW3MV2Contract } = useContractRead({
+  //   address: "0xf67443119e26c695b446883b0b931f85dcaa46d8",
+  //   abi: w3mv2ProxyContractABI,
+  //   functionName: "name",
+  // });
+
+  const {
+    data: balance,
+    isError,
+    isLoading,
+  } = useBalance({
+    address,
+  });
+
+  // useEffect(() => {
+  //   console.log("balance", balance);
+  // }, [balance]);
+
+  console.log("readW3MV2Contract", readW3MV2Contract);
+  // console.log("mintNFTData", mintNFT);
   return (
     <>
       <Head>
@@ -14,8 +66,72 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1>Web3ModalV2 Tutorial</h1>
+
+      <div
+        style={{
+          marginTop: "1em",
+          display: "flex",
+          justifyContent: "flex-end",
+          paddingRight: "1em",
+        }}
+      >
+        <Web3Button />
+      </div>
+      <main
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <video
+          autoPlay
+          playsInline
+          loop
+          muted
+          src="https://www.walletcon.com/assets/video/cube-compressed-extra.mp4"
+          width={400}
+          height={400}
+          style={{
+            border: "1px solid grey",
+            marginTop: "3em",
+            borderRadius: "1em",
+          }}
+        />
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginTop: "1em",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <h1>Web3ModalV2 Tutorial</h1>
+            {/* {isConnected && <p>Address: {address}</p>} */}
+            {/* {isConnected && balance && <p>Balance: {balance.formatted}</p>} */}
+            {/* {readW3MV2Contract && <p>ContractName: {readW3MV2Contract}</p>} */}
+          </div>
+
+          <button
+            // onClick={() => console.log('logggg')}
+            onClick={() => write?.()}
+            // disabled={isDisconnected}
+            style={{
+              marginTop: "1em",
+              color: "black",
+              borderRadius: 16,
+              backgroundColor: "white",
+              height: 50,
+              width: 100,
+            }}
+          >
+            Mint
+          </button>
+        </div>
       </main>
     </>
   );

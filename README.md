@@ -4,10 +4,10 @@ Providing a content directory to all code examples which are shared on my [Youtu
 
 ### List of Future Ideas I want to publish
 
-- [] Understadning WalletConnect
-- [] React native Web3 Wallet
-- [] Understanding Wagmi
-- [] Build a CHATGPT tool
+- []Understadning WalletConnect
+- []React native Web3 Wallet
+- [x]Understanding Wagmi
+- [ ]Build a CHATGPT tool
 
 ### Contact
 
