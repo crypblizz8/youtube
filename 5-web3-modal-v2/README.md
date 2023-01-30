@@ -4,28 +4,34 @@ This is a tutorial on how to use [Web3Modal](http://web3modal.com/) to connect t
 
 Through this tutorial, we will be minting a cool zOrb on the goerli testnet.
 
-Live Deployment Link: XXX
+Youtube Tutorial Link: XXX
+
+### Overview
+
+1. What is Web3Modal
+2. Documentation for W3MV2
+3. Next.js App
+4. Install Web3Modal + wagmi.
+	Write some code ...
+6. Create Collection for Zora
+7. Add into wagmi hooks
+8. Mint :)
 
 ### Walkthrough
-
 Clone this repository
 
 ```bash
 git clone https://github.com/crypblizz8/youtube.git
+cd /5-web3-modal-v2
+yarn install
 ```
 
-Then do a `npm install` or `yarn` + start the development server:
+Get a Project ID from WalletConnect Cloud
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-
-Process
-- Install W3MV2
-- Understand WAGMI
-- Put in the zOrb contracts
-- You need some ETH $$$
-- Mint.
+### Other URLS 
+- Web3Modal (Site): https://web3modal.com/
+- Web3Modal (Docs): https://docs.walletconnect.com/2.0/web3modal/about 
+- WalletConnect Cloud: https://cloud.walletconnect.com/sign-in
+- Wagmi: https://wagmi.sh/
+- Zora Create (Mainnet): https://create.zora.co/
+- Zora Create (Testnet): https://testnet.create.zora.co/
