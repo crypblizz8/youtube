@@ -16,7 +16,7 @@ const chains = [goerli];
 
 // Wagmi Provider
 const { provider } = configureChains(chains, [
-  walletConnectProvider({ projectId: "fc1252c3e0c13567b30ca7072f80438b" }),
+  walletConnectProvider({ projectId: "INSERT_PROJECT_ID" }),
 ]);
 
 // Wagmi Client
@@ -30,7 +30,6 @@ const wagmiClient = createClient({
 const ethereumClient = new EthereumClient(wagmiClient, chains);
 
 export default function App({ Component, pageProps }: AppProps) {
-  // return (<Component {...pageProps} />);
   return (
     <>
       <WagmiConfig client={wagmiClient}>
@@ -38,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </WagmiConfig>
 
       <Web3Modal
-        projectId="fc1252c3e0c13567b30ca7072f80438b"
+        projectId="INSERT_PROJECT_ID"
         ethereumClient={ethereumClient}
       />
     </>

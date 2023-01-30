@@ -21,3 +21,11 @@ npm run dev
 # or
 yarn dev
 ```
+
+
+Process
+- Install W3MV2
+- Understand WAGMI
+- Put in the zOrb contracts
+- You need some ETH $$$
+- Mint.
