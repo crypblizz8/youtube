@@ -4,9 +4,9 @@ Providing a content directory to all code examples which are shared on my [Youtu
 
 ### List of Future Ideas I want to work on
 
-- [] Understanding WalletConnect
-- [] React native Web3 Wallet
-- [x] Understanding Wagmi
+- [x] Understanding Wagmi Hooks (series)
+- [ ] Understanding WalletConnect
+- [ ] React Native x Web3
 - [ ] Build a CHATGPT tool
 
 ### Contact
