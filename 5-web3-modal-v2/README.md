@@ -1,10 +1,11 @@
-# Web3Modal V2
+![W3MV2](https://user-images.githubusercontent.com/45455218/215583318-1d918903-b71f-437b-8a70-2bd34cef3be6.png)
 
+# Web3Modal V2
 This is a tutorial on how to use [Web3Modal](http://web3modal.com/) to connect to your web3 dapp.
 
 Through this tutorial, we will be minting a cool zOrb on the goerli testnet.
 
-Youtube Tutorial Link: XXX
+[Youtube Tutorial Link](https://www.youtube.com/watch?v=SViUpuwLKzc)
 
 ### Overview
 
