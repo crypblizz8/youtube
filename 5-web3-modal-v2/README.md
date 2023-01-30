@@ -3,7 +3,7 @@
 # Web3Modal V2
 This is a tutorial on how to use [Web3Modal](http://web3modal.com/) to connect to your web3 dapp.
 
-Through this tutorial, we will be minting a cool zOrb on the goerli testnet.
+Through this tutorial, we will be minting a cool image on the goerli testnet with wagmi Hooks + Create Zora.
 
 [Youtube Tutorial Link](https://www.youtube.com/watch?v=SViUpuwLKzc)
 
