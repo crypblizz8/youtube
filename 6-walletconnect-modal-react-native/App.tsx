@@ -8,7 +8,7 @@ import {
 // Add in the useWalletConnectModal hook
 
 // TODO: Insert the ProjectID
-const projectId = "8b6b016f785c7f5dbbe71969d855fae8";
+const projectId = "XXX";
 
 const providerMetadata = {
   name: "YOUR_PROJECT_NAME",
@@ -37,7 +37,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>WalletConnect Modal RN Tutorial</Text>
-      <Text>{isConnected ? address : "No Connected"}</Text>
+      <Text>{isConnected ? address : "Status: Not Connected"}</Text>
       <Pressable onPress={handleButtonPress} style={styles.pressableMargin}>
         <Text>{isConnected ? "Disconnect" : "Connect"}</Text>
       </Pressable>
