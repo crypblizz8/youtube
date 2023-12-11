@@ -12,7 +12,7 @@ import { StyleSheet, Image, View } from "react-native";
 import MintSection from "./src/components/MintSection";
 
 // 1. Get projectId at https://cloud.walletconnect.com
-const projectId = "XXX";
+const projectId = "faf378b8fd897ea5a54cac416890929d";
 
 // 2. Create config
 const metadata = {
