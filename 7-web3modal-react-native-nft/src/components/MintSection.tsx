@@ -46,7 +46,12 @@ export default function MintSection() {
         <Text style={styles.centerText}>Mint</Text>
       </Pressable>
       {isLoading && <Text>Check Wallet</Text>}
-      {isSuccess && <Text>Transaction: {JSON.stringify(mintData)}</Text>}
+      <Text style={{ textAlign: "center", marginVertical: 10 }}>
+        Transaction:
+      </Text>
+      {isSuccess && (
+        <Text style={{ textAlign: "center" }}>{JSON.stringify(mintData)}</Text>
+      )}
     </View>
   );
 }
@@ -57,6 +62,9 @@ const styles = StyleSheet.create({
   },
   marginVertical: {
     marginVertical: 10,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   centerText: {
     fontSize: 16,
@@ -64,9 +72,9 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   button: {
-    backgroundColor: "#5570FF",
+    backgroundColor: "#57B36A",
     padding: 10,
-    width: 100,
-    borderRadius: 5,
+    width: 140,
+    borderRadius: 32,
   },
 });
