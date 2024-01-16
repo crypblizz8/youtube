@@ -41,16 +41,7 @@ export default function App() {
   return (
     <WagmiConfig config={wagmiConfig}>
       <View style={styles.container}>
-        <Image
-          source={require("./assets/W3MRN-New.png")}
-          style={{
-            width: 200,
-            height: 200,
-            borderRadius: 10,
-            marginVertical: 16,
-          }}
-        />
-        <W3mButton />
+        <W3mButton label="Connect Wallet" />
         <MintSection />
       </View>
       <Web3Modal />
