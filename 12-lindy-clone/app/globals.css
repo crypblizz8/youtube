@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lindy-blue: #2a66ff;
+  --lindy-blue-hover: #1d4ed8;
+  --lindy-dark: #0f3547;
+  --lindy-cream: #fcfbf8;
+  --lindy-warm: #fef9ec;
+  --text-secondary: #474a54;
+  --text-subtle: #31505f;
+  --border-light: #e7e7e7;
+  --border-subtle: #f1f5f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--lindy-dark);
+  background: #ffffff;
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-lindy-blue text-white px-6 py-2.5 rounded-full font-semibold hover:bg-lindy-blue-hover transition-all shadow-lg shadow-blue-500/20;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-700 px-6 py-2.5 rounded-full font-medium border border-gray-200 hover:bg-gray-50 transition-all;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-6;
+  }
+
+  .container-main {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .feature-card {
+    @apply bg-lindy-warm rounded-[32px] border border-orange-50/50 overflow-hidden transition-all duration-300;
+  }
+
+  .feature-card:hover {
+    @apply -translate-y-1 shadow-feature;
+  }
+}
+
+/* Hero background */
+.bg-hero {
+  background-image: url('/images/hero-bg.avif');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #FAF5EB;
+}
+
+/* Organic gradient background */
+.organic-bg {
+  background: radial-gradient(circle at 50% -10%, #fffcf0 0%, #ffffff 60%);
+}
+
+/* Warm cream gradient */
+.bg-warm-cream {
+  background: linear-gradient(180deg, #FAF5EB 0%, #FFFFFF 100%);
+}
+
+/* Glass effect for cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Workflow connector line */
+.workflow-line {
+  width: 1px;
+  height: 24px;
+  background-color: #e2e8f0;
+  margin-left: 50%;
+}
+
+/* Chat bubbles */
+.chat-bubble-ai {
+  background-color: white;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.chat-bubble-user {
+  background-color: #f1f5f9;
+}
+
+/* Ring gradient for feature visualization */
+.ring-gradient {
+  background: radial-gradient(circle, transparent 40%, rgba(253, 185, 19, 0.08) 41%, rgba(253, 185, 19, 0.08) 42%, transparent 43%);
+}
+
+/* Animation classes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
