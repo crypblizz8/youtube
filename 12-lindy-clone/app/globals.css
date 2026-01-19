@@ -3,9 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 254, 249, 243;
-  --background-end-rgb: 255, 255, 255;
+  --lindy-blue: #2a66ff;
+  --lindy-blue-hover: #1d4ed8;
+  --lindy-dark: #0f3547;
+  --lindy-cream: #fcfbf8;
+  --lindy-warm: #fef9ec;
+  --text-secondary: #474a54;
+  --text-subtle: #31505f;
+  --border-light: #e7e7e7;
+  --border-subtle: #f1f5f9;
 }
 
 * {
@@ -19,9 +25,9 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--lindy-dark);
   background: #ffffff;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
 }
 
 @layer utilities {
@@ -32,56 +38,92 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply bg-lindy-purple text-white px-6 py-2.5 rounded-full font-medium hover:bg-primary-700 transition-colors;
+    @apply bg-lindy-blue text-white px-6 py-2.5 rounded-full font-semibold hover:bg-lindy-blue-hover transition-all shadow-lg shadow-blue-500/20;
   }
 
   .btn-secondary {
-    @apply bg-white text-gray-900 px-6 py-2.5 rounded-full font-medium border border-gray-200 hover:bg-gray-50 transition-colors;
+    @apply bg-white text-gray-700 px-6 py-2.5 rounded-full font-medium border border-gray-200 hover:bg-gray-50 transition-all;
   }
 
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8;
+    @apply py-16 md:py-24 px-4 md:px-6;
   }
 
   .container-main {
     @apply max-w-7xl mx-auto;
   }
 
-  .card {
-    @apply bg-white rounded-2xl border border-gray-100 shadow-sm;
+  .feature-card {
+    @apply bg-lindy-warm rounded-[32px] border border-orange-50/50 overflow-hidden transition-all duration-300;
   }
 
-  .card-hover {
-    @apply hover:shadow-md hover:border-gray-200 transition-all duration-300;
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+  .feature-card:hover {
+    @apply -translate-y-1 shadow-feature;
   }
 }
 
-/* Custom gradient backgrounds */
+/* Hero background */
 .bg-hero {
-  background: linear-gradient(180deg, #fef9f3 0%, #fef3e7 50%, #fef6e4 100%);
+  background-image: url('/images/hero-bg.avif');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #FAF5EB;
 }
 
-.bg-enterprise {
-  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+/* Organic gradient background */
+.organic-bg {
+  background: radial-gradient(circle at 50% -10%, #fffcf0 0%, #ffffff 60%);
+}
+
+/* Warm cream gradient */
+.bg-warm-cream {
+  background: linear-gradient(180deg, #FAF5EB 0%, #FFFFFF 100%);
+}
+
+/* Glass effect for cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Workflow connector line */
+.workflow-line {
+  width: 1px;
+  height: 24px;
+  background-color: #e2e8f0;
+  margin-left: 50%;
+}
+
+/* Chat bubbles */
+.chat-bubble-ai {
+  background-color: white;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.chat-bubble-user {
+  background-color: #f1f5f9;
+}
+
+/* Ring gradient for feature visualization */
+.ring-gradient {
+  background: radial-gradient(circle, transparent 40%, rgba(253, 185, 19, 0.08) 41%, rgba(253, 185, 19, 0.08) 42%, transparent 43%);
 }
 
 /* Animation classes */
 @keyframes float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
 
 /* Custom scrollbar */

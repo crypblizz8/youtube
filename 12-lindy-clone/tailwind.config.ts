@@ -9,30 +9,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "#f5f3ff",
-          100: "#ede9fe",
-          500: "#8b5cf6",
-          600: "#7c3aed",
-          700: "#6d28d9",
-        },
         lindy: {
-          cream: "#fef9f3",
-          peach: "#fef3e7",
-          yellow: "#fef6e4",
-          purple: "#8b5cf6",
-          dark: "#1a1a2e",
+          blue: "#2a66ff",
+          "blue-hover": "#1d4ed8",
+          dark: "#0f3547",
+          cream: "#fcfbf8",
+          warm: "#fef9ec",
+          "warm-light": "#fffcf0",
+        },
+        text: {
+          secondary: "#474a54",
+          subtle: "#31505f",
+        },
+        border: {
+          light: "#e7e7e7",
+          subtle: "#f1f5f9",
         },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-gradient":
-          "linear-gradient(180deg, #fef9f3 0%, #fef3e7 50%, #fef6e4 100%)",
+        "hero-gradient": "linear-gradient(180deg, #FAF5EB 0%, #FFFFFF 100%)",
+        "warm-gradient": "radial-gradient(circle at 50% -10%, #fffcf0 0%, #ffffff 60%)",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Manrope", "Inter", "system-ui", "sans-serif"],
+      },
+      borderRadius: {
+        "4xl": "2rem",
+      },
+      boxShadow: {
+        "feature": "0 12px 24px -10px rgba(253, 185, 19, 0.15)",
+        "card": "0 4px 12px rgba(0,0,0,0.03)",
       },
     },
   },
